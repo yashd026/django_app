@@ -1,0 +1,60 @@
+{% load static %}
+<link rel  = "stylesheet" type = "text/css" href = "{% static 'my_site/add_product_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <form action = "" method = "POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class = "name">
+            <label for = "{{ form.product_name.id_for_label }}">Product Name:</label>
+            {{ form.product_name }}
+            {{ form.product_name.errors }}                
+        </div>
+
+        <div class = "brand">
+            <label for = "{{ form.product_brand.id_for_label }}">Product Brand:</label>
+            {{ form.product_brand }}
+            {{ form.product_brand.errors }}                
+        </div>
+
+        <div class = "type">
+            <label for = "{{ form.product_type.id_for_label }}">Product Type:</label>
+            {{ form.product_type }}
+            {{ form.product_type.errors }}                
+        </div>
+
+        <div class = "description">
+            <label for = "{{ form.description.id_for_label }}">Description:</label>
+            {{ form.description }}
+            {{ form.description.errors }}                
+        </div>
+
+        <div class = "img">
+            <label for = "{{ form.product_img.id_for_label }}">Product Img:</label>
+            {{ form.product_img }}
+            {{ form.product_img.errors }}
+        </div>
+
+        <input class = "login_button" type = "submit" value = "LOGIN">
+    </form>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <h2 class = "menu_head">User:</h3>
+        <a href = "{% url 'user_login' %}">Login</a>
+        <a href = "{% url 'user_sign_up' %}">SignUp</a>
+        <h2 class = "menu_head">Seller:</h3>
+        <a href = "{% url 'seller_login' %}">Login</a>
+        <a href = "{% url 'seller_sign_up' %}">SignUp</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

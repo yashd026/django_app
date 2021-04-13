@@ -1,0 +1,255 @@
+html {
+    overflow-x: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.content {
+    position: relative;
+    top: 10px;
+    border: 2px solid black;
+}
+
+.branding_heading {
+    font-family:cursive;
+    font-size: 22px;
+    font-weight:bold;
+    background-color:navajowhite;
+    position: relative;
+    top: -8px;
+    left: -8px;
+    border: 2px solid red;
+    height: 23px;
+    width: 1362px;
+}
+
+.menu {
+    position: relative;
+    top: -734px;
+    left: 1290px;
+    width: 40px;
+    height: 7px;
+    margin-bottom: 2px;
+    background-color: black;
+}
+
+.side_menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.side_menu a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side_menu a:hover {
+    color: #f1f1f1;
+}
+
+.side_menu .close_menu {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu_head {
+    color: white;
+}
+
+.home {
+    padding: 15px;
+    position: relative;
+    top: 30px;
+}
+
+.contact {
+    padding: 15px;
+    position: relative;
+    top: 20px;
+}
+
+.content * {
+    font-size: 25px;
+}
+
+.material {
+    padding: 10px
+}
+
+#id_material {
+    font-size: 20px;
+    width: 150px;
+}
+
+.drawers {
+    padding: 10px
+}
+
+#id_drawers {
+    font-size: 20px;
+    width: 120px;
+}
+
+.color {
+    padding: 10px
+}
+
+#id_color {
+    font-size: 20px;
+    width: 150px;
+}
+
+.length {
+    padding: 10px
+}
+
+#id_length {
+    font-size: 20px;
+    width: 150px;
+}
+
+.breadth {
+    padding: 10px
+}
+
+#id_breadth {
+    font-size: 20px;
+    width: 150px;
+}
+
+.height {
+    padding: 10px
+}
+
+#id_height {
+    font-size: 20px;
+    width: 150px;
+}
+
+.launch_year {
+    padding: 10px
+}
+
+#id_launch_year_day {
+    font-size: 20px;
+    width: 60px;
+}
+
+#id_launch_year_month {
+    font-size: 20px;
+    width: 120px
+}
+
+#id_launch_year_year {
+    font-size: 20px;
+    width: 90px;
+}
+
+.weight {
+    padding: 10px
+}
+
+#id_weight {
+    font-size: 20px;
+    width: 150px;
+}
+
+.rent {
+    padding: 10px
+}
+
+#id_rent {
+    font-size: 20px;
+    width: 150px;
+}
+
+.material {
+    padding: 10px
+}
+
+#id_material {
+    font-size: 20px;
+    width: 150px;
+}
+
+.img1 {
+    padding: 10px
+}
+
+#id_product_img1 {
+    font-size: 20px;
+}
+
+.img2 {
+    padding: 10px
+}
+
+#id_product_img2 {
+    font-size: 20px;
+}
+
+.img3 {
+    padding: 10px
+}
+
+#id_product_img3 {
+    font-size: 20px;
+}
+
+.img4 {
+    padding: 10px
+}
+
+#id_product_img4 {
+    font-size: 20px;
+}
+
+.submit_button {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    font-size: 20px;
+}
+
+.rating {
+    padding: 10px;
+}
+
+#id_rating {
+    font-size: 20px;
+    width: 100px;
+}
+
+.capacity {
+    padding: 10px;
+}
+
+#id_capacity {
+    font-size: 20px;
+    width: 150px;
+}

@@ -1,0 +1,60 @@
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'my_site/chair_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+
+    <div class = "content">
+        <form method = "POST" action = "" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.non_field_errors }}
+
+            <div class = "material">
+                <label for = "form.material.id_for_label">Material:</label>
+                {{ form.material }}
+                {{ form.material.errors }}
+            </div>
+
+            <div class = "armrest">
+                <label for = "form.armrest.id_for_label">Armrest Included:</label>
+                {{ form.armrest }}
+                {{ form.armrest.errors }}
+            </div>
+
+            <div class = "foldable">
+                <label for = "form.foldable.id_for_label">Foldable:</label>
+                {{ form.foldable }}
+                {{ form.foldable.errors }}
+            </div>
+
+            <div class = "pack_of">
+                <label for = "form.pack_of.id_for_label">Pack of:</label>
+                {{ form.pack_of }}
+                {{ form.pack_of.errors }}
+            </div>
+
+            <div class = "rent">
+                <label for = "form.rent.id_for_label">Rent:</label>
+                {{ form.rent }}
+                {{ form.rent.errors }}
+            </div>
+
+            <input class = "submit_button" type="submit" value = "Submit">
+        </form>
+    </div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <a href = "#">Profile</a>
+        <a href = "{% url 'user_home' %}">Logout</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load static %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'app1/user_signup_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+    <h1 class = "branding_name">RENTIT0.COM</h1>
+    
+    <div class = "content">
+        <h2 class = "login_link">SignUp/<a href = "{% url 'seller_login' %}">Login </a>instead:</h2>
+
+        <form action = "" method = "POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class = "name_label">
+                <label for = "{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+
+            <div class = "pass_label">
+                <label for = "{{ form.password.id_for_label }}">Password:&nbsp</label>
+                {{ form.password }}
+                {{ form.password.errors }}
+            </div>
+
+            <div class = "email">
+                <label for = "{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+
+            <div class = "pass">
+                <label for = "{{ form.paswrd.id_for_label }}">Password:&nbsp</label>
+                {{ form.paswrd }}
+                {{ form.paswrd.errors }}
+            </div>
+
+            <input class = "signup_button" type = "submit" value = "SignUp">
+        </form>
+    </div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <h2 class = "menu_head">Users:</h3>
+        <a href = "{% url 'user_login' %}">Login</a>
+        <a href = "{% url 'user_sign_up' %}">SignUp</a>
+        <h2 class = "menu_head">Sellers:</h3>
+        <a href = "{% url 'seller_login' %}">Login</a>
+        <a href = "{% url 'seller_sign_up' %}">SignUp</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

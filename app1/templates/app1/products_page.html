@@ -1,0 +1,28 @@
+{% load static %}
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <a href = "{% url 'filter' %}"><button>Filter</button></a>
+    {% for obj in obj_lst %}
+        <image src = "../../../media/images/{{ obj.product_name }}"></image>
+        <a href = "{% url  %}">{{ obj.product_name }}</a>
+    {% endfor %}
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <h2 class = "menu_head">Users:</h3>
+        <a href = "{% url 'user_login' %}">Login</a>
+        <a href = "{% url 'user_sign_up' %}">SignUp</a>
+        <h2 class = "menu_head">Sellers:</h3>
+        <a href = "{% url 'seller_login' %}">Login</a>
+        <a href = "{% url 'seller_sign_up' %}">SignUp</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

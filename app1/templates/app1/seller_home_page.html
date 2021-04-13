@@ -1,0 +1,26 @@
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'my_site/seller_home_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <a href = "#">Profile</a>
+        <a href = "{% url 'user_home' %}">Logout</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+
+    <img class = "img" src = "{% static 'my_site/seller_img.jpg' %}">
+
+    <a class = "add_pro" href = "{% url 'add_product' %}">Add Product</a>
+    <a class = "my_pro" href = "#">My Products</a>
+{% endblock %}

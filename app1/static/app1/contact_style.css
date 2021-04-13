@@ -1,0 +1,17 @@
+html {
+    background-color: mintcream;
+    width: 800px;
+}
+
+.branding_heading {
+    font-family:cursive;
+    font-size: 22px;
+    font-weight:bold;
+    background-color:navajowhite;
+    position: relative;
+    top: -8px;
+    left: -8px;
+    border: 2px solid red;
+    height: 23px;
+    width: 1362px;
+}

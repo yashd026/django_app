@@ -1,0 +1,73 @@
+{% load static %}
+<link rel = "stylesheet" type="text/css" href = "{% static 'my_site/seller_update_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+    <h1 class = "branding_name">RENTIT0.COM</h1>
+    <div class = "content">
+        <form action = "" method = "POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+        
+            <div class = "first_name">
+                <label for = "form.First_Name.id_for_label">First Name:<br></label>
+                {{ form.First_Name }}
+                {{ Form.First_Name.errors }}
+            </div>
+        
+            <div class = "last_name">
+                <label for = "form.Last_Name.id_for_label">Last Name:<br></label>
+                {{ form.Last_Name }}
+                {{ Form.Last_Name.errors }}
+            </div>
+                    
+            <div class = "number">
+                <label for = "form.Telephone_No.id_for_label">Telephone No:<br></label>
+                {{ form.Telephone_No }}
+                {{ Form.Telephone_No.errors }}
+            </div>
+        
+            <div class = "mail">
+                <label for = "form.Email.id_for_label">Email:<br></label>
+                {{ form.Email }}
+                {{ Form.Email.errors }}
+            </div>
+
+            <div class = "name">
+                <label for = "form.Enterprise_Name.id_for_label">Enterprise Name:<br></label>
+                {{ form.Enterprise_Name }}
+                {{ form.Enterprise_Name.errors }}
+            </div>
+        
+            <div class = "address">
+                <label for = "form.Enterprise_Address.id_for_label">Enterprise Address:<br></label>
+                {{ form.Enterprise_Address }}
+                {{ Form.Enterprise_Address.errors }}
+            </div>
+        
+            <input class = "submit_button" type = "submit" value = "Save Changes">
+        </form>
+
+        <a href = "{% url 'Verify_Email' %}">Change Email</a>
+        <a href = "{% url 'Verify_Number' %}">Change Number</a>
+    </div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <h2 class = "menu_head">Users:</h3>
+        <a href = "{% url 'user_login' %}">Login</a>
+        <a href = "{% url 'user_sign_up' %}">SignUp</a>
+        <h2 class = "menu_head">Sellers:</h3>
+        <a href = "{% url 'seller_login' %}">Login</a>
+        <a href = "{% url 'seller_sign_up' %}">SignUp</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+<link rel  = "stylesheet" type = "text/css" href = "{% static 'my_site/user_login_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+    <h1 class = "branding_name">RENTIT0.COM</h1>
+
+    <div class = "content">
+        <h2 class = "signup_link">Login/<a href = "{% url 'seller_sign_up' %}">SignUp </a>instead:</h2>
+
+        <form action = "" method = "POST">
+            {% csrf_token %}
+            {{form.non_field_errors}}
+                    
+            <div class = "name_label">
+                <label for = "{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+                {{ form.username.errors }}                
+            </div>
+
+            <div class = "pass_label">
+                <label for = "{{ form.password.id_for_label }}">Password:&nbsp</label>
+                {{ form.password }}
+                {{ form.password.errors }}
+            </div>
+                    
+            <input class = "login_button" type = "submit" value = "LOGIN">
+        </form>
+    </div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <h2 class = "menu_head">Users:</h3>
+        <a href = "{% url 'user_login' %}">Login</a>
+        <a href = "{% url 'user_sign_up' %}">SignUp</a>
+        <h2 class = "menu_head">Sellers:</h3>
+        <a href = "{% url 'seller_login' %}">Login</a>
+        <a href = "{% url 'seller_sign_up' %}">SignUp</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% load static %}
+<link rel = "stylesheet" type = "text/css" href = "{% static 'my_site/fridge_style.css' %}">
+<script src = "{% static 'my_site/menu_script.js' %}" defer></script>
+
+{% block content %}
+    <div class = "branding_heading">RENTIT0</div>
+
+    <div class = "content">
+        <form method = "POST" action = "">
+            {% csrf_token %} 
+            {{ form.non_field_errors }}
+
+            <div class = "color">
+                <label for = "form.color.id_for_label">Color:</label>
+                {{ form.color }}
+                {{ form.color.errors }}
+            </div>
+
+            <div class = "length">
+                <label for = "form.length.id_for_label">Length:</label>
+                {{ form.length }}
+                {{ form.length.errors }}
+            </div>
+
+            <div class = "breadth">
+                <label for = "form.breadth.id_for_label">Widht:</label>
+                {{ form.breadth }}
+                {{ form.breadth.errors }}
+            </div>
+
+            <div class = "height">
+                <label for = "form.height.id_for_label">Height:</label>
+                {{ form.height }}
+                {{ form.height.errors }}
+            </div>
+
+            <div class = "launch_year">
+                <label for = "form.launch_year.id_for_label">Launch_year:</label>
+                {{ form.launch_year }}
+                {{ form.launch_year.errors }}
+            </div>
+
+            <div class = "weight">
+                <label for = "form.weight.id_for_label">Weight:</label>
+                {{ form.weight }}
+                {{ form.weight.errors }}
+            </div>
+
+            <div class = "door">
+                <label for = "form.door.id_for_label">No.of doors:</label>
+                {{ form.door }}
+                {{ form.door.errors }}
+            </div>
+
+            <div class = "rating">
+                <label for = "form.rating.id_for_label">Rating:</label>
+                {{ form.rating }}
+                {{ form.rating.errors }}
+            </div>
+
+            <div class = "capacity">
+                <label for = "form.capacity.id_for_label">Capacity:</label>
+                {{ form.capacity }}
+                {{ form.capactiy.errors }}
+            </div>
+
+            <div class = "rent">
+                <label for = "form.rent.id_for_label">Rent:</label>
+                {{ form.rent }}
+                {{ form.rent.errors }}
+            </div>
+
+            <div class = "img1">
+                <label for = "form.product_img1.id_for_label">Image:</label>
+                {{ form.product_img1 }}
+                {{ form.product_img1.errors }}
+            </div>
+
+            <div class = "img2">
+                <label for = "form.product_img2.id_for_label">Image:</label>
+                {{ form.product_img2 }}
+                {{ form.product_img2.errors }}
+            </div>
+
+            <div class = "img3">
+                <label for = "form.product_img3.id_for_label">Image:</label>
+                {{ form.product_img3 }}
+                {{ form.product_img3.errors }}
+            </div>
+
+            <div class = "img4">
+                <label for = "form.product_img4.id_for_label">Image:</label>
+                {{ form.product_img4 }}
+                {{ form.product_img4.errors }}
+            </div>
+
+            <input class = "submit_button" type="submit" value = "Submit">
+        </form>
+    </div>
+
+    <a onclick="openNav()">
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+        <div class = "menu"></div>
+    </a>
+
+    <div id = "side_menu" class = "side_menu">
+        <a class = "close_menu" onclick="closeNav()">&times</a>
+        <a href = "#">Profile</a>
+        <a href = "{% url 'user_home' %}">Logout</a>
+        <a class = "home" href = "{% url 'user_home' %}">Home</a>
+        <a class = "contact" href = "{% url 'contact' %}">Contact Us</a>
+    </div>
+{% endblock %}

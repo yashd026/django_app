@@ -1,0 +1,160 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+html {
+    width: 800px;
+    background-color: mintcream;
+}
+
+.branding_name {
+    width: 200px;
+    border: 3px solid;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    left: 530px;
+    font-size: 30px;
+}
+
+.submit_button {
+    border-radius: 5px;
+    border-radius: 2px 2px black;
+    height: 25px;
+    width: 308px;
+    background-color: wheat;
+    position: relative;
+    left: -3px;
+    top: 100px;
+}
+
+.menu {
+    position: relative;
+    top: -476px;
+    left: 1300px;
+    width: 40px;
+    height: 7px;
+    margin-bottom: 2px;
+    background-color: black;
+}
+
+.branding_heading {
+    font-family:cursive;
+    font-size: 22px;
+    font-weight:bold;
+    background-color:navajowhite;
+    position: relative;
+    top: -8px;
+    left: -8px;
+    border: 2px solid red;
+    height: 23px;
+    width: 1362px;
+}
+
+.content {
+    border-radius: 10px;
+    box-shadow: 1px 1px black;
+    background-color: white;
+    position: relative;
+    left: 480px;
+    border: 3px solid rgb(159, 161, 163);
+    height: 350px;
+    width: 300px;
+}
+
+.first_name {
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    left: 60px;
+}
+
+.last_name {
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    left: 60px;
+}
+
+.number {
+    font-size: 20px;
+    position: relative;
+    top: 30px;
+    left: 60px;
+}
+
+.mail {
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.address {
+    font-size: 20px;
+    position: relative;
+    top: 60px;
+    left: 60px;
+}
+
+.name {
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    left: 60px;
+}
+
+
+.side_menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.side_menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.side_menu a:hover {
+    color: #f1f1f1;
+}
+
+.side_menu .close_menu {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.menu_head {
+    color: white;
+}
+
+.contact {
+    position: relative;
+    top: 50px;
+}
+
+.home {
+    position: relative;
+    top: 50px;
+}
